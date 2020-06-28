@@ -15,7 +15,11 @@ function App() {
 		setStep(step => step - 1)
 	}
 
-	const [details, setDetails] = useState({})
+	const [details, setDetails] = useState({
+		name: '',
+		address: '',
+		paymentMethod: '0'
+	})
 
 	const updateDetails = (newDetails) => {
 		let tempDetails = details

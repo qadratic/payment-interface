@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TextField, Typography, Button, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core'
 
-function CardInfo() {
+function CardInfo({ details, updateDetails }) {
 	return (
 		<div>
 			<TextField
@@ -10,6 +10,8 @@ function CardInfo() {
 				fullWidth
 				variant='outlined'
 				placeholder='XXXX-XXXX-XXXX-XXXX'
+				defaultValue={details.cardNo ? details.cardNo : ''}
+				onChange={e => { updateDetails({ cardNo: e.target.value }) }}
 			/>
 			<br /><br />
 			<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }} >
@@ -18,6 +20,8 @@ function CardInfo() {
 					label='EXP'
 					variant='outlined'
 					placeholder='XX/XX'
+					defaultValue={details.cardExp ? details.cardExp : ''}
+					onChange={e => { updateDetails({ cardExp: e.target.value }) }}
 				/>
 				<TextField
 					required
@@ -25,24 +29,27 @@ function CardInfo() {
 					type='password'
 					variant='outlined'
 					placeholder='XXX'
-
+					defaultValue={details.cardCvv ? details.cardCvv : ''}
+					onChange={e => { updateDetails({ cardCvv: e.target.value }) }}
 				/>
 			</div>
 		</div>
 	)
 }
 
-function UPIInfo() {
+function UPIInfo({ details, updateDetails }) {
 	return (
 		<TextField
 			required
 			label='UPI ID'
 			variant='outlined'
+			defaultValue={details.upiId ? details.upiId : ''}
+			onChange={e => { updateDetails({ upiId: e.target.value }) }}
 		/>
 	)
 }
 
-export default function PaymentDetails({ nextStep, prevStep }) {
+export default function PaymentDetails({ nextStep, prevStep, details, updateDetails }) {
 
 	const [value, setValue] = useState('0');
 
@@ -53,9 +60,9 @@ export default function PaymentDetails({ nextStep, prevStep }) {
 	};
 
 	const paymentOptions = [
-		<CardInfo />,
-		<CardInfo />,
-		<UPIInfo />,
+		<CardInfo details={details} updateDetails={updateDetails} />,
+		<CardInfo details={details} updateDetails={updateDetails} />,
+		<UPIInfo details={details} updateDetails={updateDetails} />,
 	]
 
 	return (

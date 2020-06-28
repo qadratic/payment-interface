@@ -27,7 +27,7 @@ function App() {
 
 	const screens = [
 		<PersonalDetails nextStep={nextStep} details={details} updateDetails={updateDetails} />,
-		<PaymentDetails nextStep={nextStep} updateDetails={updateDetails} prevStep={prevStep} />
+		<PaymentDetails nextStep={nextStep} details={details} updateDetails={updateDetails} prevStep={prevStep} />
 	]
 
 	return (

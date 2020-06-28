@@ -22,11 +22,16 @@ export default function MainLayout({ children, activeStep }) {
 const styles = {
 	container: {
 		display: 'flex',
+		minWidth: '30vw',
+		// flexDirection: 'row',
+		// justifyContent: 'center',
+		// alignItems: 'center',
 		flexDirection: 'column',
 		border: 'solid black 1px',
 	},
 	stepperContainer: {
-		width: '30vw',
+		width: '100%',
 		border: 'solid black 1px',
+		flex: 1,
 	},
 }

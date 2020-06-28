@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MainLayout from './components/MainLayout';
 import PersonalDetails from './components/screens/PersonalDetails';
 import PaymentDetails from './components/screens/PaymentDetails';
+import SuccessScreen from './components/screens/SuccessScreen';
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
 
 	const screens = [
 		<PersonalDetails nextStep={nextStep} details={details} updateDetails={updateDetails} />,
-		<PaymentDetails nextStep={nextStep} details={details} updateDetails={updateDetails} prevStep={prevStep} />
+		<PaymentDetails nextStep={nextStep} prevStep={prevStep} details={details} updateDetails={updateDetails} />,
+		<SuccessScreen prevStep={prevStep} details={details} />,
 	]
 
 	return (

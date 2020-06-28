@@ -53,9 +53,8 @@ export default function PaymentDetails({ nextStep, prevStep, details, updateDeta
 
 	const [value, setValue] = useState('0');
 
-	console.log(value)
-
 	const handleChange = (event) => {
+		updateDetails({ paymentMethod: event.target.value })
 		setValue(event.target.value);
 	};
 
@@ -83,8 +82,6 @@ export default function PaymentDetails({ nextStep, prevStep, details, updateDeta
 				{paymentOptions[value]}
 				<br /><br />
 				<br /><br />
-				<Button variant='contained' color='primary' onClick={nextStep} >Next</Button>
-				{' '}
 				<Button variant='contained' color='primary' onClick={prevStep} >Prev</Button>
 				{' '}
 				<Button variant='contained' color='primary' onClick={nextStep} >Finish</Button>

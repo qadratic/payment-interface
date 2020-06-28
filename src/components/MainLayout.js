@@ -23,9 +23,6 @@ const styles = {
 	container: {
 		display: 'flex',
 		minWidth: '30vw',
-		// flexDirection: 'row',
-		// justifyContent: 'center',
-		// alignItems: 'center',
 		flexDirection: 'column',
 		border: 'solid black 1px',
 	},

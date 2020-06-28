@@ -23,7 +23,7 @@ function App() {
 			tempDetails[key] = newDetails[key]
 		})
 		setDetails(tempDetails)
-		console.log(details)
+		// console.log(details)
 	}
 
 	const screens = [

@@ -14,9 +14,20 @@ function App() {
 		setStep(step => step - 1)
 	}
 
+	const [details, setDetails] = useState({})
+
+	const updateDetails = (newDetails) => {
+		let tempDetails = details
+		Object.keys(newDetails).forEach(key => {
+			tempDetails[key] = newDetails[key]
+		})
+		setDetails(tempDetails)
+		console.log(details)
+	}
+
 	const screens = [
-		<PersonalDetails nextStep={nextStep} />,
-		<PaymentDetails nextStep={nextStep} prevStep={prevStep} />
+		<PersonalDetails nextStep={nextStep} details={details} updateDetails={updateDetails} />,
+		<PaymentDetails nextStep={nextStep} updateDetails={updateDetails} prevStep={prevStep} />
 	]
 
 	return (

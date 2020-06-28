@@ -1,21 +1,22 @@
 import React from 'react'
-import { Stepper, Step, StepLabel } from '@material-ui/core'
+import { Stepper, Step, StepLabel, Paper, Divider } from '@material-ui/core'
 
 export default function MainLayout({ children, activeStep }) {
 	return (
-		<div style={styles.container} >
+		<Paper elevation={2} style={styles.container} >
 			<div style={styles.stepperContainer} >
 				<Stepper activeStep={activeStep} >
 					<Step>
-						<StepLabel>step1</StepLabel>
+						<StepLabel>Personal Details</StepLabel>
 					</Step>
 					<Step>
-						<StepLabel>step2</StepLabel>
+						<StepLabel>Payment Information</StepLabel>
 					</Step>
 				</Stepper>
+				<Divider />
 			</div>
 			{children}
-		</div>
+		</Paper>
 	)
 }
 
@@ -24,11 +25,11 @@ const styles = {
 		display: 'flex',
 		minWidth: '30vw',
 		flexDirection: 'column',
-		border: 'solid black 1px',
+		// border: 'solid black 1px',
 	},
 	stepperContainer: {
 		width: '100%',
-		border: 'solid black 1px',
+		// border: 'solid black 1px',
 		flex: 1,
 	},
 }

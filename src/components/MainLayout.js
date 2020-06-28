@@ -1,8 +1,7 @@
 import React from 'react'
 import { Stepper, Step, StepLabel } from '@material-ui/core'
 
-export default function MainLayout() {
-	const activeStep = 0
+export default function MainLayout({ children, activeStep }) {
 	return (
 		<div style={styles.container} >
 			<div style={styles.stepperContainer} >
@@ -15,7 +14,7 @@ export default function MainLayout() {
 					</Step>
 				</Stepper>
 			</div>
-			<div>screen</div>
+			{children}
 		</div>
 	)
 }

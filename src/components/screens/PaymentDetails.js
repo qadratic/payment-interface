@@ -68,7 +68,7 @@ export default function PaymentDetails({ nextStep, prevStep, details, updateDeta
 		<div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 40, }} >
 			<Typography variant='h5' >Payment Information</Typography>
 			<br /><br />
-			<form>
+			<form onSubmit={(e) => { e.preventDefault(); nextStep(); }} >
 				<FormControl component="fieldset">
 					<FormLabel component="legend">Payment Method</FormLabel>
 					<RadioGroup row aria-label="method" name="methods" value={value} onChange={handleChange}>
@@ -84,7 +84,7 @@ export default function PaymentDetails({ nextStep, prevStep, details, updateDeta
 				<br /><br />
 				<Button variant='contained' color='primary' onClick={prevStep} >Prev</Button>
 				{' '}
-				<Button variant='contained' color='primary' onClick={nextStep} >Finish</Button>
+				<Button type='submit' variant='contained' color='primary' >Finish</Button>
 			</form>
 		</div>
 	)

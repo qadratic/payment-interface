@@ -6,7 +6,7 @@ export default function PersonalDetails({ nextStep, details, updateDetails }) {
 		<div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 40, }} >
 			<Typography variant='h5' >Personal Details</Typography>
 			<br /><br />
-			<form>
+			<form onSubmit={(e)=>{e.preventDefault(); nextStep();}} >
 				<TextField
 					defaultValue={details.name ? details.name : ''}
 					required
@@ -26,7 +26,7 @@ export default function PersonalDetails({ nextStep, details, updateDetails }) {
 				/>
 				<br /><br />
 				<br /><br />
-				<Button variant='contained' color='primary' onClick={nextStep} >Next</Button>
+				<Button type='submit' variant='contained' color='primary' >Next</Button>
 			</form>
 		</div>
 	)

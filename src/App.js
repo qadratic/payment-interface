@@ -6,8 +6,12 @@ function App() {
 
 	const [step, setStep] = useState(0)
 
+	const nextStep = () => {
+		setStep(step => step + 1)
+	}
+
 	const screens = [
-		<PersonalDetails />
+		<PersonalDetails nextStep={nextStep} />
 	]
 
 	return (

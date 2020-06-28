@@ -27,5 +27,6 @@ const styles = {
 	},
 	stepperContainer: {
 		width: '30vw',
+		border: 'solid black 1px',
 	},
 }

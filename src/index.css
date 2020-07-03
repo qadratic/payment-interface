@@ -7,3 +7,7 @@ body {
 	align-items: center;
 	background-color: #0A1018;
 }
+
+.hand {
+	cursor: pointer;
+}

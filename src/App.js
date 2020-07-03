@@ -1,10 +1,9 @@
 import React from 'react'
-import CheckCircleIcon from '@material-ui/icons/CheckCircle'
-import { Typography, Switch, Divider, Button } from '@material-ui/core'
-import portfolio from './images/portfolio.png'
-import transaction from './images/transaction.png'
-import tutorials from './images/tutorials.png'
-import settings from './images/setting.png'
+import { Typography, Divider, Button } from '@material-ui/core'
+import portfolio from './images/portfolio.svg'
+import transaction from './images/transaction.svg'
+import tutorials from './images/tutorials.svg'
+import settings from './images/setting.svg'
 import btc from './images/btc.svg'
 import eth from './images/eth.svg'
 import impexp from './images/impexp.svg'
@@ -16,32 +15,32 @@ export default function App() {
 	return (
 		<div style={{ height: '100vh', width: '100vw', }} >
 			<div style={{ marginLeft: '10%', marginRight: '10%', paddingTop: '30px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
-				<img src='https://cypherock.com/static/img/logo.png' alt='logo' />
+				<img className='hand' src='https://cypherock.com/static/img/logo.png' alt='logo' />
 				<div style={{ color: '#D3A630', display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
 					<img src={synchronized} alt='' width='300' />
 				</div>
 			</div>
 			<div style={{ marginLeft: '10%', marginRight: '10%', paddingTop: '30px', display: 'flex', flexDirection: 'row', }} >
 				<div style={{ minWidth: '25%', backgroundColor: '#1E2328', paddingTop: '50px', borderRadius: 10, color: 'white' }} >
-					<div style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
+					<div className='hand' style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
 						<img src={portfolio} alt='' width='40' />
 						&nbsp;&nbsp;
 						<Typography variant='h6' >Portfolio</Typography>
 					</div>
 					<Divider style={{ backgroundColor: 'gray' }} />
-					<div style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
+					<div className='hand' style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
 						<img src={transaction} alt='' width='40' />
 						&nbsp;&nbsp;
 						<Typography variant='h6' >Last Transaction</Typography>
 					</div>
 					<Divider style={{ backgroundColor: 'gray' }} />
-					<div style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
+					<div className='hand' style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
 						<img src={tutorials} alt='' width='40' />
 						&nbsp;&nbsp;
 						<Typography variant='h6' >Tutorials</Typography>
 					</div>
 					<Divider style={{ backgroundColor: 'gray' }} />
-					<div style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
+					<div className='hand' style={{ marginLeft: '20%', marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
 						<img src={settings} alt='' width='40' />
 						&nbsp;&nbsp;
 						<Typography variant='h6' >Setting</Typography>
@@ -49,7 +48,7 @@ export default function App() {
 					<div style={{ marginTop: 50, marginBottom: 50, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }} >
 						<Button variant='outlined' color='primary' size='large' >make benificiary</Button>
 					</div>
-					<div style={{ marginTop: 50, }} >
+					<div className='hand' style={{ marginTop: 50, }} >
 						<div style={{ height: 100, width: '100%', backgroundColor: 'rgb(75, 60, 43)', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }} >
 							<Typography variant='h6' style={{ color: 'white' }} >Support</Typography>
 						</div>
@@ -62,7 +61,7 @@ export default function App() {
 							<img src={search} alt='' width='300' />
 							&nbsp;&nbsp;
 							&nbsp;&nbsp;
-							<img src={adddelete} alt='' width='220' />
+							<img className='hand' src={adddelete} alt='' width='220' />
 						</div>
 					</div>
 					<Typography variant='h5' style={{ color: 'white', margin: 50 }} >Total Coins - 7</Typography>
@@ -83,7 +82,7 @@ export default function App() {
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >
-								<img src={impexp} alt='' width='200' />
+								<img className='hand' src={impexp} alt='' width='200' />
 							</Typography></td>
 						</tr>
 						<tr style={{ backgroundColor: 'rgb(22, 28, 35)', borderRadius: 10, color: 'white' }} >
@@ -96,7 +95,7 @@ export default function App() {
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >
-								<img src={impexp} alt='' width='200' />
+								<img className='hand' src={impexp} alt='' width='200' />
 							</Typography></td>
 						</tr>
 						<tr style={{ backgroundColor: 'rgb(22, 28, 35)', borderRadius: 10, color: 'white' }} >
@@ -109,7 +108,7 @@ export default function App() {
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >
-								<img src={impexp} alt='' width='200' />
+								<img className='hand' src={impexp} alt='' width='200' />
 							</Typography></td>
 						</tr>
 						<tr style={{ backgroundColor: 'rgb(22, 28, 35)', borderRadius: 10, color: 'white' }} >
@@ -122,7 +121,7 @@ export default function App() {
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} >
-								<img src={impexp} alt='' width='200' />
+								<img className='hand' src={impexp} alt='' width='200' />
 							</td>
 						</tr>
 					</table>

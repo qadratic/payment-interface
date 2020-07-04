@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { TextField, Typography, Button, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core'
+import { TextField, Typography, Button} from '@material-ui/core'
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+import CheckIcon from '@material-ui/icons/Check';
+
 
 function CardInfo({ details, updateDetails }) {
 	return (
@@ -51,39 +54,34 @@ function UPIInfo({ details, updateDetails }) {
 
 export default function PaymentDetails({ nextStep, prevStep, details, updateDetails }) {
 
-	const [value, setValue] = useState('0');
+	// const [value, setValue] = useState('0');
 
-	const handleChange = (event) => {
-		updateDetails({ paymentMethod: event.target.value })
-		setValue(event.target.value);
-	};
+	// const handleChange = (event) => {
+	// 	updateDetails({ paymentMethod: event.target.value })
+	// 	setValue(event.target.value);
+	// };
 
-	const paymentOptions = [
-		<CardInfo details={details} updateDetails={updateDetails} />,
-		<CardInfo details={details} updateDetails={updateDetails} />,
-		<UPIInfo details={details} updateDetails={updateDetails} />,
-	]
+	// const paymentOptions = [
+	// 	<CardInfo details={details} updateDetails={updateDetails} />,
+	// 	<CardInfo details={details} updateDetails={updateDetails} />,
+	// 	<UPIInfo details={details} updateDetails={updateDetails} />,
+	// ]
 
 	return (
 		<div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 40, }} >
-			<Typography variant='h5' >Payment Information</Typography>
-			<br /><br />
 			<form onSubmit={(e) => { e.preventDefault(); nextStep(); }} >
-				<FormControl component="fieldset">
-					<FormLabel component="legend">Payment Method</FormLabel>
-					<RadioGroup row aria-label="method" name="methods" value={value} onChange={handleChange}>
-						<FormControlLabel value={'0'} control={<Radio />} label="Debit Card" />
-						<FormControlLabel value={'1'} control={<Radio />} label="Credit Card" />
-						<FormControlLabel value={'2'} control={<Radio />} label="UPI" />
-						<FormControlLabel value={'3'} disabled control={<Radio />} label="COD" />
-					</RadioGroup>
-				</FormControl>
-				<br /><br />
-				{paymentOptions[value]}
-				<br /><br />
-				<br /><br />
-				<Button variant='contained' color='primary' onClick={prevStep} >Prev</Button>
-				{' '}
+				<div style={{ backgroundColor: 'rgb(20,20,20)', borderRadius: 10, color: 'rgb(225, 154, 76)', padding: 20, margin: 20 }} >
+					<Typography variant='h5' >25BKJNKNLJL58fjkdhfk26dnfds15</Typography>
+				</div>
+				<br />
+				<div style={{ padding: 10, color: 'white', backgroundColor: 'rgb(120, 120, 120)', borderRadius: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
+					<div style={{ display: 'flex', flexDirection: 'row', justifyContent: '', alignItems: 'center' }} >
+						<ArrowRightAltIcon />
+						<Typography variant='body1' >Select the wallet on device</Typography>
+					</div>
+					<CheckIcon />
+				</div>
+				<br />
 				<Button type='submit' variant='contained' color='primary' >Finish</Button>
 			</form>
 		</div>

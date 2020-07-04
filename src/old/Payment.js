@@ -4,7 +4,7 @@ import PersonalDetails from './components/screens/PersonalDetails';
 import PaymentDetails from './components/screens/PaymentDetails';
 import SuccessScreen from './components/screens/SuccessScreen';
 
-function App() {
+function Payment({setOpen}) {
 
 	const [step, setStep] = useState(0)
 
@@ -37,10 +37,10 @@ function App() {
 	]
 
 	return (
-		<MainLayout activeStep={step} >
+		<MainLayout activeStep={step} setOpen={setOpen} >
 			{screens[step]}
 		</MainLayout>
 	);
 }
 
-export default App;
+export default Payment;

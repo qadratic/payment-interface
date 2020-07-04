@@ -1,5 +1,5 @@
-import React from 'react'
-import { Typography, Divider, Button } from '@material-ui/core'
+import React, { useState } from 'react'
+import { Typography, Divider, Button, Dialog } from '@material-ui/core'
 import portfolio from './images/portfolio.svg'
 import transaction from './images/transaction.svg'
 import tutorials from './images/tutorials.svg'
@@ -10,10 +10,16 @@ import impexp from './images/impexp.svg'
 import search from './images/search.svg'
 import adddelete from './images/adddelete.svg'
 import synchronized from './images/synchronized.svg'
+import Payment from './old/Payment'
 
 export default function App() {
+	const [open, setOpen]=useState(false)
+
 	return (
 		<div style={{ height: '100vh', width: '100vw', }} >
+			<Dialog open={open} onClose={()=>{setOpen(false)}} >
+				<Payment setOpen={setOpen} />
+			</Dialog>
 			<div style={{ marginLeft: '10%', marginRight: '10%', paddingTop: '30px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
 				<img className='hand' src='https://cypherock.com/static/img/logo.png' alt='logo' />
 				<div style={{ color: '#D3A630', display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
@@ -76,13 +82,14 @@ export default function App() {
 						<tr style={{ backgroundColor: 'rgb(22, 28, 35)', borderRadius: 10, color: 'white' }} >
 							<td style={{ padding: 20, display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
 								<img alt='' src={btc} />
+								&nbsp;&nbsp;
 								<Typography variant='body1' >  BITCOIN</Typography>
 							</td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >BTC 0.00256</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >
-								<img className='hand' src={impexp} alt='' width='200' />
+								<img onClick={()=>{setOpen(true)}} className='hand' src={impexp} alt='' width='200' />
 							</Typography></td>
 						</tr>
 						<tr style={{ backgroundColor: 'rgb(22, 28, 35)', borderRadius: 10, color: 'white' }} >
@@ -95,7 +102,7 @@ export default function App() {
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >
-								<img className='hand' src={impexp} alt='' width='200' />
+								<img onClick={()=>{setOpen(true)}} className='hand' src={impexp} alt='' width='200' />
 							</Typography></td>
 						</tr>
 						<tr style={{ backgroundColor: 'rgb(22, 28, 35)', borderRadius: 10, color: 'white' }} >
@@ -108,7 +115,7 @@ export default function App() {
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >
-								<img className='hand' src={impexp} alt='' width='200' />
+								<img onClick={()=>{setOpen(true)}} className='hand' src={impexp} alt='' width='200' />
 							</Typography></td>
 						</tr>
 						<tr style={{ backgroundColor: 'rgb(22, 28, 35)', borderRadius: 10, color: 'white' }} >
@@ -121,7 +128,7 @@ export default function App() {
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.5268</Typography></td>
 							<td style={{ padding: 20 }} ><Typography variant='body1' >$ 0.12586</Typography></td>
 							<td style={{ padding: 20 }} >
-								<img className='hand' src={impexp} alt='' width='200' />
+								<img onClick={()=>{setOpen(true)}} className='hand' src={impexp} alt='' width='200' />
 							</td>
 						</tr>
 					</table>

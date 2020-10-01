@@ -15,6 +15,14 @@ function Payment({setOpen}) {
 		setStep(step => step - 1)
 	}
 
+	const modifyStep = () => {
+		setStep(step => step - 1)
+	}
+	
+	const oldStep = () => {
+		setStep(step => step - 1)
+	}
+	
 	const [details, setDetails] = useState({
 		name: '',
 		address: '',
